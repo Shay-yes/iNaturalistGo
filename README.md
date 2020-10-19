@@ -13,7 +13,6 @@ python3 manage.py runserver
 
 #
 ### Running tests for this application:
-######Note: This feature is not yet available.
-1) In a terminal, navigate to the project folder containing manage.py then run this command: 
-python3 manage.py test X
-replacing X with the name of the file you want to test
+In a terminal, navigate to the project folder containing manage.py then run this command: 
+python3 manage.py test iNaturalist_447
+
