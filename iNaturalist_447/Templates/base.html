@@ -16,7 +16,14 @@ Currently, this file does not make any visual changes.
     <title>iNaturalist-Go</title>
 </head>
 <body>
-
+    <!-- Place to display messages -->
+    {% if messages%}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor%}
+    {% endif %}
     {% block content %}
 
     <!-- This is where other html pages will be contained -->
