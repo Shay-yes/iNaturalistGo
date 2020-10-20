@@ -4,7 +4,7 @@
 Note: This first release contains more or less "wireframe" views of our application's homepage and user registration page. This release lacks functionality outside of presenting these pages to the user.
 
 #### Required software:
-See requirements.txt
+This release requires Python -- Django recommends the latest version of Python 3 -- and pip to be installed on the machine one wishes to run the application on. The pip installer is required in step 2 below, which uses a pip command to install Django version 3.1.2 and the following Python/Django packages: asgiref version 3.2.10, pytz version 2020.1, and sqlparse version 0.4.1. Outside of Python and the aforementioned packages, no other specific software is required.
 
 ### To run the application:
 1) Download the latest release
