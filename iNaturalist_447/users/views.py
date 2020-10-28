@@ -12,7 +12,7 @@ def register(request):
             return redirect('home')
     else:
         form = UserRegisterForm()
-    return render(request, 'users/register.html', {'form':form})
+    return render(request, 'register.html', {'form':form})
 
 
 
