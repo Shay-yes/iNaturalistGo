@@ -13,4 +13,4 @@ from django.shortcuts import render
 
 # This shows the homepage when a user goes to the default url
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home/user_home.html')
