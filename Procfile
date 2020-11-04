@@ -1,1 +1,1 @@
-web: gunicorn iNaturalist_447.wsgi
+web: gunicorn iNaturalist_447/iNaturalist_447.wsgi
