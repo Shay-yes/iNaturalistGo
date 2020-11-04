@@ -9,6 +9,7 @@ from ..forms import UserRegisterForm, UserLoginForm
 
 class TestForms(TestCase):
 
+    # test for valid register page inputs
     def test_register_form_valid(self):
         form = UserRegisterForm(data={
             'username': 'DudeMan123',
@@ -19,12 +20,14 @@ class TestForms(TestCase):
 
         self.assertTrue(form.is_valid())
 
+    # test for empty register page inputs
     def test_register_form_empty(self):
         form = UserRegisterForm(data={})
 
         self.assertFalse(form.is_valid())
         self.assertEquals(len(form.errors), 4)
 
+    # test for valid login page inputs
     def test_login_form_valid(self):
         form = UserLoginForm(data={
             'username': 'DudeMan123',
@@ -33,6 +36,7 @@ class TestForms(TestCase):
 
         self.assertTrue(form.is_valid())
 
+    # test for empty login page inputs
     def test_login_form_empty(self):
         form = UserLoginForm(data={})
 

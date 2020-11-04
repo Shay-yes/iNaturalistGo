@@ -17,7 +17,7 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/register.html', 'base.html')
 
-    # test for the register page
+    # test for the login page
     def test_login_view(self):
         client = Client()
         response = client.get(reverse(login))
