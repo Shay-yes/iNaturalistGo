@@ -1,5 +1,5 @@
 """
-ASGI config for iNaturalist_447 project.
+ASGI config for iNaturalist_447_old project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
