@@ -1,1 +1,1 @@
-web:gunicorn inaturalistgo.wsgi
+web: gunicorn inaturalistgo.wsgi
