@@ -25,7 +25,7 @@ SECRET_KEY = '-ose^#(h%ljy-r2=_kd9k6dci6o-&&pl!m)9#1@4ol*645k%@9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://inaturalistgo.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'inaturalistgo.herokuapp.com/']
 
 
 # Application definition
