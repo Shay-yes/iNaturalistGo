@@ -4,7 +4,7 @@ Test to see if each form is working correctly
 
 
 from django.test import SimpleTestCase, TestCase
-from ..forms import UserRegisterForm
+from ..forms import UserRegisterForm, UserLoginForm
 
 
 class TestForms(TestCase):
@@ -24,3 +24,17 @@ class TestForms(TestCase):
 
         self.assertFalse(form.is_valid())
         self.assertEquals(len(form.errors), 4)
+
+    def test_login_form_valid(self):
+        form = UserLoginForm(data={
+            'username': 'DudeMan123',
+            'password': 'pass123'
+        })
+
+        self.assertTrue(form.is_valid())
+
+    def test_login_form_empty(self):
+        form = UserLoginForm(data={})
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 2)
