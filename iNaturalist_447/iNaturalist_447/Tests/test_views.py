@@ -14,4 +14,4 @@ class TestViews(TestCase):
         client = Client()
         response = client.get(reverse(home))
         self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'home/user_home.html', 'base.html')
+        self.assertTemplateUsed(response, 'home/home.html', 'base.html')
