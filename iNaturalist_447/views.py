@@ -8,6 +8,8 @@ Note: this may be moved to a separate directory when more views are developed.
 """
 
 from django.shortcuts import render
+
+
 # from django.http import HttpResponse
 
 
