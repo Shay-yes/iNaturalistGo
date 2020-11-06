@@ -1,5 +1,5 @@
 """
-WSGI config for iNaturalist_447 project.
+WSGI config for iNaturalist_447_old project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
