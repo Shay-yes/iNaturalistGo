@@ -20,3 +20,6 @@ def home(request):
         return render(request, 'home/user_home.html')
     else:
         return render(request, 'home/home.html')
+
+def google_verify(request):
+    return render(request, 'home/googlec9d04339c6f2434c.html')
