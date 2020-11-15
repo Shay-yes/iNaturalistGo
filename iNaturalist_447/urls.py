@@ -25,4 +25,5 @@ urlpatterns = [
     path('register/', user_views.register, name='register'),
     path('login/', user_views.login, name='login', ),
     path('accounts/', include('allauth.urls')),
+    path('googlec9d04339c6f2434c.html/', views.google_verify, name='google_verify'),
 ]
