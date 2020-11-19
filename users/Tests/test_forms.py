@@ -14,8 +14,8 @@ class TestForms(TestCase):
         form = UserRegisterForm(data={
             'username': 'DudeMan123',
             'email': 'dude@man.com',
-            'password1': 'pass123',
-            'password2': 'pass123'
+            'password1': 't3stp4ss',
+            'password2': 't3stp4ss'
         })
 
         self.assertTrue(form.is_valid())
@@ -30,8 +30,8 @@ class TestForms(TestCase):
     # test for valid login page inputs
     def test_login_form_valid(self):
         form = UserLoginForm(data={
-            'username': 'DudeMan123',
-            'password': 'pass123'
+            'user_name': 'testymctestface',
+            'pass_word': 't3st1ng!'
         })
 
         self.assertTrue(form.is_valid())
