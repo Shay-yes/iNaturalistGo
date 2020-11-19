@@ -19,4 +19,4 @@ def home(request):
     if request.user.is_authenticated:
         return render(request, 'home/user_home.html')
     else:
-        return render(request, 'home/home.html')
+        return render(request, 'home/home_backup.html')
