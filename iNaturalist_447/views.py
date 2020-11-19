@@ -19,4 +19,8 @@ def home(request):
     if request.user.is_authenticated:
         return render(request, 'home/user_home.html')
     else:
-        return render(request, 'home/home_backup.html')
+        return render(request, 'home/home.html')
+
+def google_verify(request):
+    return render(request, 'home/googlec9d04339c6f2434c.html')
+
