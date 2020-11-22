@@ -15,7 +15,7 @@ class TestViews(TestCase):
         client = Client()
         response = client.get(reverse(home))
         self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'home/home_backup.html', 'base.html')
+        self.assertTemplateUsed(response, 'home/home.html', 'base.html')
 
     # tests both the "logged in" and "logged out" views;
     # creates a test user, logs them in, ensures "logged in" view shown
@@ -31,5 +31,5 @@ class TestViews(TestCase):
         client.logout()
         response = client.get(reverse(home))
         self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'home/home_backup.html', 'base.html')
+        self.assertTemplateUsed(response, 'home/home.html', 'base.html')
 

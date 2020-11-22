@@ -20,6 +20,17 @@ class TestForms(TestCase):
 
         self.assertTrue(form.is_valid())
 
+    # test for valid register page inputs
+    def test_register_form_invalid(self):
+        form = UserRegisterForm(data={
+            'username': '/',
+            'email': '/',
+            'password1': '|',
+            'password2': '/'
+        })
+
+        self.assertFalse(form.is_valid())
+
     # test for empty register page inputs
     def test_register_form_empty(self):
         form = UserRegisterForm(data={})
@@ -35,6 +46,15 @@ class TestForms(TestCase):
         })
 
         self.assertTrue(form.is_valid())
+
+    # test for invalid login page inputs
+    def test_login_form_invalid(self):
+        form = UserLoginForm(data={
+            'user_name': '/',
+            'pass_word': 'poidfugposiudfgpoisudfpgoiusdpfiogupsdfuposudfgposiudfpgoiuspfiogupsdfugpsdgfupdgfupsodgfupoisudfgpgspdo'
+        })
+
+        self.assertFalse(form.is_valid())
 
     # test for empty login page inputs
     def test_login_form_empty(self):
