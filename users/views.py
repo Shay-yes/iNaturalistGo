@@ -5,6 +5,7 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import login as auth_login
 from .forms import UserRegisterForm, UserLoginForm
 
+
 # user register page
 def register(request):
     if request.method == 'POST':
@@ -13,7 +14,16 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, "Account created for {}".format(username))
-            return redirect('home')
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                messages.success(request, "User Registered. Welcome!")
+                auth_login(request, user)
+                return redirect('home')
+            else:
+                messages.warning(request, "Registration failed. Please try again.")
+                return render(request, 'users/register.html', {'form': form})
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form':form})
