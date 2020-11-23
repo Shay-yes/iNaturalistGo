@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.test import TestCase, Client
 from django.urls import reverse
 from ..views import register, login
+from iNaturalist_447.views import home
 
 
 # Test to see if each view is correct
@@ -19,9 +20,9 @@ class TestViews(TestCase):
         User.objects.create_user(username="testUser", password="t3stp4ss")
         loggedIn = client.login(username='testUser', password='t3stp4ss')
         self.assertEquals(loggedIn, True)
-        response = client.get(reverse(register))
-        self.assertNotEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'users/register.html', 'base.html')
+        response = client.get(reverse(home))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'home/user_home.html', 'base.html')
         client.logout()
         response = client.get(reverse(register))
         self.assertEquals(response.status_code, 200)
@@ -35,9 +36,9 @@ class TestViews(TestCase):
         User.objects.create_user(username="testUser", password="t3stp4ss")
         loggedIn = client.login(username='testUser', password='t3stp4ss')
         self.assertEquals(loggedIn, True)
-        response = client.get(reverse(login))
-        self.assertNotEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'users/login.html', 'base.html')
+        response = client.get(reverse(home))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'home/user_home.html', 'base.html')
         client.logout()
         response = client.get(reverse(login))
         self.assertEquals(response.status_code, 200)
