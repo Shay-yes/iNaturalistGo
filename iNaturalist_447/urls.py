@@ -17,6 +17,7 @@ from . import views
 from django.contrib import admin
 from django.urls import path, include
 from users import views as user_views
+from species import views as species_views
 
 # These are the paths for each url
 urlpatterns = [
