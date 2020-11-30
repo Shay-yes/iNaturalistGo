@@ -27,5 +27,8 @@ urlpatterns = [
     path('login/', user_views.login, name='login'),
 	path('logout/', user_views.logout, name='logout'),
     path('accounts/', include('allauth.urls')),
-
+    path('accounts/profile/', views.profile_view, name='account_profile'),
+    path('accounts/email/', views.email, name='email'),
+    path('accounts/verification_sent/', views.verification_sent, name='verification_sent'),
+    path('accounts/verified_email_required/', views.verified_email_required, name='verified_email_required'),
 ]

@@ -21,6 +21,11 @@ def home(request):
     else:
         return render(request, 'home/home.html')
 
-def google_verify(request):
-    return render(request, 'home/googlec9d04339c6f2434c.html')
-
+def profile_view(request):
+    return render(request, 'account/profile.html')
+def email(request):
+    return render(request, 'account/email.html')
+def verification_sent(request):
+    return render(request, 'account/verification_sent.html')
+def verified_email_required(request):
+    return render(request, 'account/verified_email_required.html')
