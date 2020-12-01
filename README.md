@@ -19,3 +19,6 @@ just the default "Sign in" or "Create account." Additionally, navigate to 127.0.
 integration.
 
 
+### Running tests for this application:
+In a terminal, navigate to the project folder containing manage.py (which should be the same directory referenced in step 3 above) then run this command: 
+python3 manage.py test
