@@ -31,7 +31,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('speciesUpload/', species_views.submit_view, name = 'species_upload'),
     path('gallery/', species_views.gallery_view, name = 'species_gallery'),
-    path('googlec9d04339c6f2434c.html/', views.google_verify, name='google_verify'),
+    #path('googlec9d04339c6f2434c.html/', views.google_verify, name='google_verify'),
     path('accounts/profile/', views.profile_view, name='account_profile'),
     path('accounts/email/', views.email, name='email'),
     path('accounts/verification_sent/', views.verification_sent, name='verification_sent'),
