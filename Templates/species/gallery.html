@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style> 
+figcaption {
+  text-align: center;
+  /*padding:2px; */
+}
+</style>
+
+<div class="row justify-content-center">
+  <h3> iNaturalistGo Species Gallery </h3>
+</div>
+<div class="row justify-content-center">
+  <p> (Click <a href="../"> here </a> to return home) </p>
+</div>
+<hr>
+<div class="container">
+  {% for species in allSpecies reversed %}
+    <div class="row justify-content-center">
+      <figure>
+        <img src="{{ species.image.url }}" class="img-responsive" width="400px" height="400px">
+        <figcaption> {{ species.common_name }} (<i>{{ species.latin_name }}</i>) </figcaption>
+        <figcaption> Uploaded by user {{ species.user.username }}</figcaption>
+        {% if species.location == '' %}
+          <figcaption> Location unknown </figcaption>
+        {% else %}
+          <figcaption> Reported location: {{ species.location }}</figcaption>
+        {% endif %}
+      </figure>
+    </div>
+  {% endfor %}
+</div>
+<div class="row justify-content-center">
+  <p> Click <a href="../"> here </a> to return home </p>
+</div>
+</div>
+{% endblock %}

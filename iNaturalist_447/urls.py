@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from users import views as user_views
 from species import views as species_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 # These are the paths for each url
 urlpatterns = [
@@ -27,5 +29,7 @@ urlpatterns = [
     path('login/', user_views.login, name='login'),
 	path('logout/', user_views.logout, name='logout'),
     path('accounts/', include('allauth.urls')),
-    path('googlec9d04339c6f2434c.html/', views.google_verify, name='google_verify'),
-]
+    path('speciesUpload/', species_views.submit_view, name = 'species_upload'),
+    path('gallery/', species_views.gallery_view, name = 'species_gallery'),
+    path('googlec9d04339c6f2434c.html/', views.google_verify, name='google_verify')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

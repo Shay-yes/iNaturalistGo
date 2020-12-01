@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block title %}Species Upload{% endblock %}
+
+{% block content %}
+
+<style>
+    .errorlist {
+        display:none;
+    }
+    
+</style>
+<body>
+    <div class="row justify-content-center">
+        <h3> Upload a Species! </h3>
+    </div> 
+    <div class="row justify-content-center">
+        <p> Please enter the species' common name and its Latin name.</p>
+    </div>
+    <div class="row justify-content-center"> 
+        <small> If one or both names are unknown, please enter "Unknown" in the relevant box(es)</small>
+        <small> "Location" is optional -- feel free to enter the species' city, ZIP code, etc or leave it blank. </small>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        <form method = "post" enctype="multipart/form-data"> 
+            {% csrf_token %}
+        
+            {{ form.as_p }} 
+            <button type="submit">Upload</button> 
+        </form>
+    </div> 
+    <hr>
+    <div class="row justify-content-center">
+        <p> Click <a href="../"> here </a> to return home </p>
+      </div>
+</body> 
+{% endblock %}
