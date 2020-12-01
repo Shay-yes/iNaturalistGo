@@ -20,7 +20,7 @@ class TestForms(TestCase):
 
         self.assertTrue(form.is_valid())
 
-    # test for valid register page inputs
+    # test for invalid register page inputs
     def test_register_form_invalid(self):
         form = UserRegisterForm(data={
             'username': '/',
