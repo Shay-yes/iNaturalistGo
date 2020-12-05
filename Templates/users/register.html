@@ -1,62 +1,22 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Register {% endblock %}
+
 {% block content %}
-    <style>
-        fieldset {
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .help {
-            font-size: 0.75em;
-        }
-
-        ul {
-            width: 50%;
-            margin: auto;
-        }
-
-        li {
-            font-size: 0.75em;
-            text-align: left;
-        }
-
-        #space {
-            padding-right: 38px;
-        }
-
-    </style>
-    <div>
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4"> Come Play!</legend>
-            {% for field in form %}
-                <div class="fieldWrapper">
-                    {{ field.errors }}
-            
-                    {% if field.id_for_label == "id_email" %}
-                    <label id="space"> {{ field.label_tag }} </label>
-                    {% else %}
-                    {{ field.label_tag }} 
-                    {% endif %}
-                    {{ field }} 
-        
-                    {% if field.help_text %}
-                    <p class="help">{{ field.help_text|safe }}</p>
-                    {% endif %}
-                </div>
-            {% endfor %}
-            <div>
-                <button class="btn btn-outline-info" type="submit"> Sign Up</button>
-            </div>
-            </fieldset>
-        </form>
-        <div class="border-top pt-3">
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <small class="text-muted">Already have an account? <a class="ml-2" href="../login">Sign In</a></small>
-                <div class="col-sm-4"></div>
-            </div>
+<div class="row justify-content-center">
+  <h2> iNaturalistGo - Register </h2>
+</div>
+<hr>
+<div class="row justify-content-center">
+	<form method="POST">
+    	{% csrf_token %}
+        {{ form | crispy }}
+        <div class="row justify-content-center">
+        	<button class="btn btn-outline-info" type="submit"> Sign Up</button>
         </div>
-    </div>
+    </form>
+</div>
+<div class="row justify-content-center">
+	<small class="text-muted">Already have an account? <a class="ml-2" href="../login">Sign In</a></small>
+</div>
 {% endblock content%}

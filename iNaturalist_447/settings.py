@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'crispy_forms',
 ]
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
@@ -147,6 +148,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
